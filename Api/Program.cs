@@ -1,10 +1,8 @@
-using Microsoft.AspNetCore.Mvc;
+using CommandService;
+using DataAccess.Core;
 using Microsoft.EntityFrameworkCore;
-using MiniValidation;
-using Presentation.Data;
-using Presentation.Dtos;
 using Presentation.Extensions;
-using System.Threading.Tasks;
+using QueryService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +14,8 @@ builder.Services.AddCors();
 builder.Services.AddDbContext<TaskDbContext>(a =>
     a.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
-builder.Services.AddScoped<ITaskRepository,TaskRepository>();
+builder.Services.AddScoped<ICommandTaskRepository, CommandTaskRepository>();
+builder.Services.AddScoped<IQueryTaskRepository, QueryTaskRepository>();
 
 var app = builder.Build();
 

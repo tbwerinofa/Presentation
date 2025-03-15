@@ -173,7 +173,6 @@ C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\o
 C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\obj\Debug\net9.0\Presentation.AssemblyInfoInputs.cache
 C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\obj\Debug\net9.0\Presentation.AssemblyInfo.cs
 C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\obj\Debug\net9.0\Presentation.csproj.CoreCompileInputs.cache
-C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\obj\Debug\net9.0\Presentation.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\obj\Debug\net9.0\Presentation.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\obj\Debug\net9.0\scopedcss\bundle\Presentation.styles.css
 C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\obj\Debug\net9.0\staticwebassets.build.json
@@ -193,3 +192,12 @@ C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\o
 C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\obj\Debug\net9.0\ref\Presentation.dll
 C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\bin\Debug\net9.0\MiniValidation.dll
+C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\obj\Debug\net9.0\Presentation.sourcelink.json
+C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\bin\Debug\net9.0\BusinessObject.dll
+C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\bin\Debug\net9.0\CommandService.dll
+C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\bin\Debug\net9.0\DataAccess.dll
+C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\bin\Debug\net9.0\QueryService.dll
+C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\bin\Debug\net9.0\BusinessObject.pdb
+C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\bin\Debug\net9.0\CommandService.pdb
+C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\bin\Debug\net9.0\QueryService.pdb
+C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Api\bin\Debug\net9.0\DataAccess.pdb

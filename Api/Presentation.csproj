@@ -16,4 +16,10 @@
     <PackageReference Include="MiniValidation" Version="0.9.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObject\BusinessObject.csproj" />
+    <ProjectReference Include="..\CommandService\CommandService.csproj" />
+    <ProjectReference Include="..\QueryService\QueryService.csproj" />
+  </ItemGroup>
+
 </Project>

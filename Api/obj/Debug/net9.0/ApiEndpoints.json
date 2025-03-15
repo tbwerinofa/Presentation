@@ -22,7 +22,7 @@
         "StatusCode": 404
       },
       {
-        "Type": "Presentation.Dtos.TaskDetailDto",
+        "Type": "BusinessObject.Dtos.TaskDetailDto",
         "MediaTypes": [
           "application/json"
         ],
@@ -40,7 +40,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "Presentation.Dtos.TaskDto[]",
+        "Type": "BusinessObject.Dtos.TaskDto[]",
         "MediaTypes": [
           "application/json"
         ],
@@ -58,13 +58,13 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Presentation.Dtos.TaskDetailDto",
+        "Type": "BusinessObject.Dtos.TaskDetailDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Presentation.Dtos.TaskDetailDto",
+        "Type": "BusinessObject.Dtos.TaskDetailDto",
         "MediaTypes": [
           "application/json"
         ],
@@ -89,7 +89,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Presentation.Dtos.TaskDetailDto",
+        "Type": "BusinessObject.Dtos.TaskDetailDto",
         "IsRequired": true
       }
     ],
@@ -102,7 +102,7 @@
         "StatusCode": 404
       },
       {
-        "Type": "Presentation.Dtos.TaskDetailDto",
+        "Type": "BusinessObject.Dtos.TaskDetailDto",
         "MediaTypes": [
           "application/json"
         ],

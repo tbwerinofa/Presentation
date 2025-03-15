@@ -1124,6 +1124,58 @@
         "build": {
           "buildTransitive/net6.0/_._": {}
         }
+      },
+      "BusinessObject/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/BusinessObject.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessObject.dll": {}
+        }
+      },
+      "CommandService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "BusinessObject": "1.0.0",
+          "DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommandService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommandService.dll": {}
+        }
+      },
+      "DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.3",
+          "Microsoft.EntityFrameworkCore.Sqlite": "9.0.3"
+        },
+        "compile": {
+          "bin/placeholder/DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccess.dll": {}
+        }
+      },
+      "QueryService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "BusinessObject": "1.0.0",
+          "DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/QueryService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/QueryService.dll": {}
+        }
       }
     }
   },
@@ -3162,14 +3214,37 @@
         "system.threading.channels.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "BusinessObject/1.0.0": {
+      "type": "project",
+      "path": "../BusinessObject/BusinessObject.csproj",
+      "msbuildProject": "../BusinessObject/BusinessObject.csproj"
+    },
+    "CommandService/1.0.0": {
+      "type": "project",
+      "path": "../CommandService/CommandService.csproj",
+      "msbuildProject": "../CommandService/CommandService.csproj"
+    },
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../DataAccess/DataAccess.csproj",
+      "msbuildProject": "../DataAccess/DataAccess.csproj"
+    },
+    "QueryService/1.0.0": {
+      "type": "project",
+      "path": "../QueryService/QueryService.csproj",
+      "msbuildProject": "../QueryService/QueryService.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "BusinessObject >= 1.0.0",
+      "CommandService >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 9.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.3",
       "Microsoft.EntityFrameworkCore.Sqlite >= 9.0.3",
-      "MiniValidation >= 0.9.2"
+      "MiniValidation >= 0.9.2",
+      "QueryService >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3203,7 +3278,17 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\tafara\\Documents\\Visual Studio 2022\\FinChoiceTaskApp\\Presentation\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "C:\\Users\\tafara\\Documents\\Visual Studio 2022\\FinChoiceTaskApp\\Presentation\\BusinessObject\\BusinessObject.csproj"
+            },
+            "C:\\Users\\tafara\\Documents\\Visual Studio 2022\\FinChoiceTaskApp\\Presentation\\CommandService\\CommandService.csproj": {
+              "projectPath": "C:\\Users\\tafara\\Documents\\Visual Studio 2022\\FinChoiceTaskApp\\Presentation\\CommandService\\CommandService.csproj"
+            },
+            "C:\\Users\\tafara\\Documents\\Visual Studio 2022\\FinChoiceTaskApp\\Presentation\\QueryService\\QueryService.csproj": {
+              "projectPath": "C:\\Users\\tafara\\Documents\\Visual Studio 2022\\FinChoiceTaskApp\\Presentation\\QueryService\\QueryService.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
