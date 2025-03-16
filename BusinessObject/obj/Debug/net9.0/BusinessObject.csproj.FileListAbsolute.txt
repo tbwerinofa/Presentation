@@ -10,3 +10,7 @@ C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\Busin
 C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\BusinessObject\obj\Debug\net9.0\refint\BusinessObject.dll
 C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\BusinessObject\obj\Debug\net9.0\BusinessObject.pdb
 C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\BusinessObject\obj\Debug\net9.0\ref\BusinessObject.dll
+C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\BusinessObject\bin\Debug\net9.0\DataAccess.dll
+C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\BusinessObject\bin\Debug\net9.0\DataAccess.pdb
+C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\BusinessObject\obj\Debug\net9.0\BusinessObject.csproj.AssemblyReference.cache
+C:\Users\tafara\Documents\Visual Studio 2022\FinChoiceTaskApp\Presentation\BusinessObject\obj\Debug\net9.0\Business.4FFE46AD.Up2Date

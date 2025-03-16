@@ -1,8 +1,14 @@
+using AutoMapper;
+using BusinessObject.Helpers;
 using CommandService;
 using DataAccess.Core;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using Presentation.Exception;
 using Presentation.Extensions;
 using QueryService;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,11 +17,32 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 builder.Services.AddCors();
 
+builder.Services.AddProblemDetails();
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
 builder.Services.AddDbContext<TaskDbContext>(a =>
-    a.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+{ 
+    a.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+    a.UseSqlite(x => x.MigrationsAssembly("Presentation"));
+    a.EnableSensitiveDataLogging(true);
+}
+);
 
 builder.Services.AddScoped<ICommandTaskRepository, CommandTaskRepository>();
 builder.Services.AddScoped<IQueryTaskRepository, QueryTaskRepository>();
+
+builder.Host.SerilogConfiguration(builder.Configuration.GetValue<string>("LogsPath"));
+//builder.Services.AddSerilog();
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+var mappingConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new TaskProfile());
+});
+
+IMapper mapper = mappingConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
 
 var app = builder.Build();
 
@@ -33,7 +60,10 @@ app.UseCors(a=> a.WithOrigins("http://localhost:3000/")
 
 app.UseHttpsRedirection();
 
+
 app.MapTaskEndPoints();
+app.UseExceptionHandler();
+
 
 app.Run();
 

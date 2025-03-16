@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "deL0MiMS7/w=",
+  "dgSpecHash": "k8hfPW+4asE=",
   "success": true,
   "projectFilePath": "C:\\Users\\tafara\\Documents\\Visual Studio 2022\\FinChoiceTaskApp\\Presentation\\QueryService\\QueryService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tafara\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\tafara\\.nuget\\packages\\microsoft.data.sqlite.core\\9.0.3\\microsoft.data.sqlite.core.9.0.3.nupkg.sha512",
     "C:\\Users\\tafara\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.3\\microsoft.entityframeworkcore.9.0.3.nupkg.sha512",
     "C:\\Users\\tafara\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.3\\microsoft.entityframeworkcore.abstractions.9.0.3.nupkg.sha512",

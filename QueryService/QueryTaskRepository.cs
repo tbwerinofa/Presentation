@@ -1,4 +1,5 @@
-﻿using BusinessObject.Dtos;
+﻿using AutoMapper;
+using BusinessObject.Dtos;
 using DataAccess.Core;
 using DataAccess.EntitySet;
 using Microsoft.EntityFrameworkCore;
@@ -10,14 +11,16 @@ public class QueryTaskRepository: IQueryTaskRepository
     #region global fields
 
     private readonly TaskDbContext dbContext;
+    private readonly IMapper _mapper;
 
     #endregion
 
     #region CTOR
 
-    public QueryTaskRepository(TaskDbContext dbContext)
+    public QueryTaskRepository(TaskDbContext dbContext, IMapper mapper)
     {
         this.dbContext = dbContext;
+        this._mapper = mapper;
     }
 
     #endregion
@@ -26,7 +29,12 @@ public class QueryTaskRepository: IQueryTaskRepository
 
     public async Task<List<TaskDto>> GetAll()
     {
-        return await dbContext.Tasks.Select(a => new TaskDto(a.Id, a.Title, a.Description, a.Status, a.DueDate)).ToListAsync();
+        var taskList =  dbContext.Tasks;
+
+        //return _mapper.Map<List<TaskDto>>(taskList);
+
+        return await taskList.Select(a => new TaskDto(a.Id, a.Title, a.Description, a.TaskStatusEntity.Name, a.DueDate)).ToListAsync();
+
     }
     public async Task<TaskDetailDto> Get(int id)
     {
@@ -40,7 +48,7 @@ public class QueryTaskRepository: IQueryTaskRepository
 
     private static TaskDetailDto EntityToTaskDetailDto(TaskEntity entity)
     {
-        return new TaskDetailDto(entity.Id, entity.Title, entity.Description, entity.Status, entity.DueDate);
+        return new TaskDetailDto(entity.Id, entity.Title, entity.Description, entity.TaskStatusEntityId, entity.TaskStatusEntity.Name, entity.DueDate);
     }
 
     #endregion

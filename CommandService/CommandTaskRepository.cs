@@ -64,14 +64,14 @@ public class CommandTaskRepository : ICommandTaskRepository
 
     private static TaskDetailDto EntityToTaskDetailDto(TaskEntity entity)
     {
-        return new TaskDetailDto(entity.Id, entity.Title, entity.Description, entity.Status, entity.DueDate);
+        return new TaskDetailDto(entity.Id, entity.Title, entity.Description,entity.TaskStatusEntityId, entity.TaskStatusEntity.Name, entity.DueDate);
     }
 
     private static void DtoToEntity(TaskDetailDto dto, TaskEntity entity)
     {
         entity.Title = dto.title;
         entity.Description = dto.description;
-        entity.Status = dto.status;
+        entity.TaskStatusEntityId = dto.taskStatusEntityId;
         entity.DueDate = dto.dueDate;
     }
     
