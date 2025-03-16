@@ -3,6 +3,7 @@ using BusinessObject.Dtos;
 using DataAccess.Core;
 using DataAccess.EntitySet;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace QueryService;
 
@@ -11,16 +12,14 @@ public class QueryTaskRepository: IQueryTaskRepository
     #region global fields
 
     private readonly TaskDbContext dbContext;
-    private readonly IMapper _mapper;
 
     #endregion
 
     #region CTOR
 
-    public QueryTaskRepository(TaskDbContext dbContext, IMapper mapper)
+    public QueryTaskRepository(TaskDbContext dbContext)
     {
         this.dbContext = dbContext;
-        this._mapper = mapper;
     }
 
     #endregion
@@ -29,11 +28,11 @@ public class QueryTaskRepository: IQueryTaskRepository
 
     public async Task<List<TaskDto>> GetAll()
     {
-        var taskList =  dbContext.Tasks;
+        var taskList =  dbContext.Tasks.Include(a=> a.TaskStatusEntity).IgnoreQueryFilters();
 
         //return _mapper.Map<List<TaskDto>>(taskList);
 
-        return await taskList.Select(a => new TaskDto(a.Id, a.Title, a.Description, a.TaskStatusEntity.Name, a.DueDate)).ToListAsync();
+        return await taskList.Select(a => new TaskDto(a.Id, a.Title, a.Description, a.TaskStatusEntity.Id, a.TaskStatusEntity.Name, a.DueDate)).ToListAsync();
 
     }
     public async Task<TaskDetailDto> Get(int id)

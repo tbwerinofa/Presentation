@@ -69,7 +69,7 @@ public static class WebApiTaskExtensions
                 if (!MiniValidator.TryValidate(dto, out var errors))
                     return Results.ValidationProblem(errors);
 
-                var newTask = await repo.Add(dto);
+                var newTask = await repo.AddAsync(dto);
 
                 return Results.Created($"/task/{newTask.id}", newTask);
             }
@@ -97,7 +97,7 @@ public static class WebApiTaskExtensions
                 if (await queryRepo.Get(dto.id) == null)
                     return Results.Problem($"Task with ID {dto.id} not found", statusCode: 404);
 
-                var updatedTask = await repo.Update(dto);
+                var updatedTask = await repo.UpdateAsync(dto);
 
                 return Results.Ok(updatedTask);
             }
@@ -127,7 +127,7 @@ public static class WebApiTaskExtensions
                     return Results.Problem($"Task with ID {taskId} not found", statusCode: 404);
                 }
 
-                await repo.Delete(taskDetailDto.id);
+                await repo.DeleteAsync(taskDetailDto.id);
 
                 return Results.Ok();
             }

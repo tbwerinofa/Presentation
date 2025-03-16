@@ -1,6 +1,5 @@
 ﻿using DataAccess.EntitySet;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 using System.Reflection;
 
 namespace DataAccess.Core;
@@ -10,9 +9,18 @@ public class TaskDbContext : DbContext
     public TaskDbContext(DbContextOptions<TaskDbContext> options) : base(options) { }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        var folder = Environment.SpecialFolder.ApplicationData;
-        var path = Environment.GetFolderPath(folder);
-        optionsBuilder.UseSqlite($"Data Source={Path.Join(path, "TaskMgt.db")}");
+
+        if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") is null)
+        {
+            //optionsBuilder.UseInMemoryDatabase(new Guid().ToString());
+        }
+        else
+        {
+            var folder = Environment.SpecialFolder.ApplicationData;
+            var path = Environment.GetFolderPath(folder);
+            optionsBuilder.UseSqlite($"Data Source={Path.Join(path, "TaskMgt.db")}");
+        }
+       
         base.OnConfiguring(optionsBuilder);
     }
 

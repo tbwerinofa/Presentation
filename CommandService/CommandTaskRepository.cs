@@ -25,7 +25,7 @@ public class CommandTaskRepository : ICommandTaskRepository
 
     #region Methods
 
-    public async Task<TaskDetailDto> Add(TaskDetailDto dto)
+    public async Task<TaskDetailDto> AddAsync(TaskDetailDto dto)
         {
             var entity = new TaskEntity();
             DtoToEntity(dto, entity);
@@ -36,7 +36,7 @@ public class CommandTaskRepository : ICommandTaskRepository
             return EntityToTaskDetailDto(entity);
         }
 
-    public async Task<TaskDetailDto> Update(TaskDetailDto dto)
+    public async Task<TaskDetailDto> UpdateAsync(TaskDetailDto dto)
     {
         var entity = await dbContext.Tasks.FindAsync(dto.id);
 
@@ -51,7 +51,7 @@ public class CommandTaskRepository : ICommandTaskRepository
         return EntityToTaskDetailDto(entity);
     }
 
-    public async Task Delete(int id)
+    public async Task DeleteAsync(int id)
     {
         var entity = await dbContext.Tasks.FindAsync(id);
 

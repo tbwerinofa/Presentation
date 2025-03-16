@@ -1,0 +1,7 @@
+{
+  "BusinessObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\tafara\\Documents\\Visual Studio 2022\\FinChoiceTaskApp\\Presentation\\BusinessObject",
+  "CommandService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\tafara\\Documents\\Visual Studio 2022\\FinChoiceTaskApp\\Presentation\\CommandService",
+  "DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\tafara\\Documents\\Visual Studio 2022\\FinChoiceTaskApp\\Presentation\\DataAccess",
+  "Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\tafara\\Documents\\Visual Studio 2022\\FinChoiceTaskApp\\Presentation\\Api",
+  "QueryService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\tafara\\Documents\\Visual Studio 2022\\FinChoiceTaskApp\\Presentation\\QueryService"
+}

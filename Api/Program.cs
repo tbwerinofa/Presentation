@@ -3,12 +3,9 @@ using BusinessObject.Helpers;
 using CommandService;
 using DataAccess.Core;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
 using Presentation.Exception;
 using Presentation.Extensions;
 using QueryService;
-using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -67,3 +64,4 @@ app.UseExceptionHandler();
 
 app.Run();
 
+public partial class Program { }
