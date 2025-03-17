@@ -5,7 +5,7 @@ Dependencies
 Code in this repo depends on following
  - VS Code Editor
  - Visual Studio 2022(optional)
- -.NET 9 SDK installer.
+ - .NET 9 SDK installer.
  - React 9.0.0
 
 Please note the above may require more dependencies for the to work
