@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Task } from "../types/task";
+import useFetchTaskStatusList from "../hooks/TaskStatusHooks";
+import ApiStatus from "../ApiStatus";
 
 type Args = {
   task: Task;
@@ -8,6 +10,9 @@ type Args = {
 
 const TaskForm = ({ task, submitted }: Args) => {
   const [taskState, setTaskState] = useState({ ...task });
+  const { data, status, isSuccess } = useFetchTaskStatusList();
+  if (!isSuccess) return <ApiStatus status={status} />;
+
   const onSubmit: React.MouseEventHandler<HTMLButtonElement> = async (e) => {
     e.preventDefault();
     submitted(taskState);
@@ -50,21 +55,49 @@ const TaskForm = ({ task, submitted }: Args) => {
           <label htmlFor="status" className="form-label">
             Status
           </label>
-          <input
-            type="text"
+          <select
             className="form-control"
             id="status"
             name="status"
-            value={taskState.status}
+            defaultValue={taskState.taskStatusEntityId}
+            onChange={(e) => {
+              const statusId = data.find(
+                (status) => status.id === parseInt(e.target.value)
+              );
+              setTaskState({
+                ...taskState,
+                taskStatusEntityId: parseInt(e.target.value),
+              });
+              //setTaskStatusState(e.target.value)
+              console.log(statusId);
+            }}
+          >
+            {data.map((status) => (
+              <option key={status.id} value={status.id}>
+                {status.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="dueDate" className="form-label">
+            Due Date
+          </label>
+          <input
+            type="date"
+            className="form-control"
+            id="dueDate"
+            name="dueDate"
+            value={taskState.dueDate ? taskState.dueDate.substring(0, 10) : ""}
             onChange={(e) =>
-              setTaskState({ ...taskState, status: e.target.value })
+              setTaskState({ ...taskState, dueDate: e.target.value })
             }
           />
         </div>
         <button
           type="submit"
           className="btn btn-primary mt-2"
-          disabled={!taskState.title || !taskState.status}
+          disabled={!taskState.title || taskState.taskStatusEntityId == 0}
           onClick={onSubmit}
         >
           Submit

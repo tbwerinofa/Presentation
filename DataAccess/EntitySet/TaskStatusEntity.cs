@@ -10,7 +10,7 @@ public class TaskStatusEntity
 
     [Key]
     public int Id { get; set; }
-    public string Name { get; set; } = string.Empty;
+    public string Name { get; set; }
     public virtual ICollection<TaskEntity> TaskEntities { get; set; }
 }
 

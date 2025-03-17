@@ -20,12 +20,16 @@ const TaskDetail = () => {
       <div className="col-6"></div>
       <div className="col-6">
         <h1>Task Detail</h1>
-        <p>{data.title}</p>
-
-        <p>{data.status}</p>
-        <div className="row">
-          <div className="col-12 mt-3">{data.description}</div>
-        </div>
+        <ul className="list-group">
+          <li className="list-group-item">{data.title}</li>
+          <li className="list-group-item">{data.status}</li>
+          <li className="list-group-item">
+            {data.dueDate ? data.dueDate.substring(0, 10) : ""}
+          </li>
+          <li className="list-group-item">
+            <div className="col-12 mt-3">{data.description}</div>
+          </li>
+        </ul>
         <p>
           <button
             className="btn btn-danger w-100"

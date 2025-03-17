@@ -11,7 +11,8 @@ const TaskAdd = () => {
     title: "",
     description: "",
     status: "",
-    dueDate: new Date(),
+    taskStatusEntityId: 0,
+    dueDate: "",
   };
 
   return (

@@ -27,9 +27,9 @@ builder.Services.AddDbContext<TaskDbContext>(a =>
 
 builder.Services.AddScoped<ICommandTaskRepository, CommandTaskRepository>();
 builder.Services.AddScoped<IQueryTaskRepository, QueryTaskRepository>();
+builder.Services.AddScoped<IQueryTaskStatusRepository, QueryTaskStatusRepository>();
 
 builder.Host.SerilogConfiguration(builder.Configuration.GetValue<string>("LogsPath"));
-//builder.Services.AddSerilog();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
@@ -59,6 +59,7 @@ app.UseHttpsRedirection();
 
 
 app.MapTaskEndPoints();
+app.MapTaskStatusEntityEndPoints();
 app.UseExceptionHandler();
 
 

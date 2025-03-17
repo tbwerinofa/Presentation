@@ -37,7 +37,7 @@ public class QueryTaskRepository: IQueryTaskRepository
     }
     public async Task<TaskDetailDto> Get(int id)
     {
-        var entity = await dbContext.Tasks.SingleOrDefaultAsync(a => a.Id == id);
+        var entity = await dbContext.Tasks.Include(a=>a.TaskStatusEntity).SingleOrDefaultAsync(a => a.Id == id);
 
         if (entity == null)
             return null;

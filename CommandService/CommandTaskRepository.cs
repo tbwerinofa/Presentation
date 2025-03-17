@@ -64,7 +64,8 @@ public class CommandTaskRepository : ICommandTaskRepository
 
     private static TaskDetailDto EntityToTaskDetailDto(TaskEntity entity)
     {
-        return new TaskDetailDto(entity.Id, entity.Title, entity.Description,entity.TaskStatusEntityId, entity.TaskStatusEntity.Name, entity.DueDate);
+        string status = entity.TaskStatusEntity == null ?string.Empty: entity.TaskStatusEntity.Name;
+        return new TaskDetailDto(entity.Id, entity.Title, entity.Description,entity.TaskStatusEntityId, status, entity.DueDate);
     }
 
     private static void DtoToEntity(TaskDetailDto dto, TaskEntity entity)

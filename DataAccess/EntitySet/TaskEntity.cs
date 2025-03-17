@@ -10,6 +10,6 @@ public class TaskEntity{
     public string? Description { get; set; }
 
     public int TaskStatusEntityId { get; set; }
-    public virtual TaskStatusEntity TaskStatusEntity { get; set; } = new TaskStatusEntity();
+    public virtual TaskStatusEntity TaskStatusEntity { get; set; }
     public DateTime? DueDate { get; set; }
 }

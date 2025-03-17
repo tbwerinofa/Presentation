@@ -22,6 +22,7 @@ const TaskList = () => {
             <th>Name</th>
             <th>Status</th>
             <th>Description</th>
+            <th>Due Date</th>
           </tr>
         </thead>
         <tbody>
@@ -31,6 +32,7 @@ const TaskList = () => {
                 <td>{t.title}</td>
                 <td>{t.status}</td>
                 <td>{t.description}</td>
+                <td>{t.dueDate ? t.dueDate.substring(0, 10) : ""}</td>
               </tr>
             ))}
         </tbody>

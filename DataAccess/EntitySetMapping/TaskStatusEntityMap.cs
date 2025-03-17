@@ -12,7 +12,6 @@ public partial class TaskStatusEntityMap : InsightEntityTypeConfiguration<TaskSt
         {
             modelBuilder.HasKey(c => c.Id);
             modelBuilder.Property(a => a.Name).IsRequired();
-            modelBuilder.HasIndex(a => a.Name).IsUnique();
             modelBuilder.Property(a => a.Name).HasMaxLength(100);
         }
     }

@@ -19,10 +19,11 @@ public partial class TaskEntityMap : InsightEntityTypeConfiguration<TaskEntity>
             modelBuilder.Property(a => a.Title).IsRequired();
             modelBuilder.Property(a => a.TaskStatusEntityId).IsRequired();
 
-        modelBuilder
+            modelBuilder
                  .HasOne(u => u.TaskStatusEntity)
                  .WithMany(u => u.TaskEntities)
-                 .OnDelete(DeleteBehavior.Restrict);
+                 .HasForeignKey(e => e.TaskStatusEntityId)
+                 .OnDelete(DeleteBehavior.Cascade);
         }
     }
 

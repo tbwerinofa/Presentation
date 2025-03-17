@@ -26,7 +26,7 @@ public class TaskDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        //SeedData.Seed(builder);
+        SeedData.Seed(builder);
 
         var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
         .Where(type => !String.IsNullOrEmpty(type.Namespace))
@@ -42,8 +42,8 @@ public class TaskDbContext : DbContext
         base.OnModelCreating(builder);
     }
 
-    public DbSet<TaskStatusEntity> TaskStatus => Set<TaskStatusEntity>();
-    public DbSet<TaskEntity> Tasks => Set<TaskEntity>();
+    public DbSet<TaskStatusEntity> TaskStatus { get; set; }
+    public DbSet<TaskEntity> Tasks { get; set; }
 
 }
 
