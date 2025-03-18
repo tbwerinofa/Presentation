@@ -18,8 +18,13 @@ This is the React Application that has been used for the front end.
 -- TanStack Query (FKA React Query) has been used for State management
 
 Minimal Web API
+
 DataAccess
  - Make use of Microsoft Nuget package EntityframeworkCore as an Object Relation Mapping (ORM) tool to persist data to a SQLite database.
+ ** Please note you must generate seed data for Task Status in SQLLite. This can be done in Package Manager console by the following steps
+   1. Enable Entity Framework database migrations
+   2. Update database using below command
+       dotnet ef database update
 
 Business Object
  - Creates Business objects that are used by the Service layer and Presentation layer. 
